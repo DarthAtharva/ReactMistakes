@@ -1,6 +1,7 @@
 import { Link, Route, Routes, useParams } from "react-router";
 import MistakeList from "./MistakeList";
 import NotFound from "./pages/NotFound";
+import Home from "./pages/Home";
 import Mistake1 from "./pages/Mistake1";
 import Mistake2 from "./pages/Mistake2";
 
@@ -36,6 +37,7 @@ const App = () => {
 
       <Routes>
 
+        <Route path = "/" element = {<Home/>} />
         <Route path = "/mistake" element = {<MistakeList/>}/> 
         <Route path = "/mistake/:id" element = {<DynamicMistake/>}/> 
         <Route path = "*" element = {<NotFound/>}/> 
