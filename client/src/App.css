@@ -1,0 +1,5 @@
+@import "tailwindcss";
+
+.deepu{
+  @apply text-lg bg-black text-white p-4 rounded
+}
