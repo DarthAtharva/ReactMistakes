@@ -78,7 +78,7 @@ const Mistake4 = () => {
     return(
 
         <div className="flex flex-col">
-            <h1>Object state instead of multiple smaller ones</h1>
+            <h1>Multiple smaller ones instead of a single Object State</h1>
 
             <div className="flex gap-2 justify-center py-4">
 

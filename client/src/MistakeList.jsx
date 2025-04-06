@@ -11,6 +11,7 @@ const MistakeList = () => {
         <li><Link to = "/mistake/2">Mistake 2</Link></li>
         <li><Link to = "/mistake/3">Mistake 3</Link></li>
         <li><Link to = "/mistake/4">Mistake 4</Link></li>
+        <li><Link to = "/mistake/5">Mistake 5</Link></li>
 
       </ul>
       
