@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Mistake1 from "./pages/Mistake1";
 import Mistake2 from "./pages/Mistake2";
 import Mistake3 from "./pages/Mistake3";
+import Mistake4 from "./pages/Mistake4";
 
 const App = () => {
 
@@ -20,6 +21,9 @@ const App = () => {
     
     if(id === "3")
       return <Mistake3/>
+
+    if(id === "4")
+      return <Mistake4/>
 
     return <Mistake/>
 
