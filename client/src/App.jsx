@@ -8,6 +8,7 @@ import Mistake3 from "./pages/Mistake3";
 import Mistake4 from "./pages/Mistake4";
 import Mistake5 from "./pages/Mistake5";
 import Mistake6 from "./pages/Mistake6";
+import Mistake7 from "./pages/Mistake7";
 
 const App = () => {
 
@@ -32,6 +33,9 @@ const App = () => {
 
     if(id === "6")
       return <Mistake6/>
+
+    if(id === "7")
+      return <Mistake7/>
 
     return <Mistake/>
 
