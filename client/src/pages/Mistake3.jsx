@@ -6,7 +6,6 @@ const Mistake3 = () => {
     const [mode, setMode] = useState("Bad");
 
     const badCode = `
-    <pre>
     const handleType = (e) => {
 
         setUser({
@@ -14,11 +13,8 @@ const Mistake3 = () => {
         })        
 
     };
-    </pre>
     `
-
     const goodCode = `
-    <pre>
     const handleType = (e) => {
 
         setUser({
@@ -27,7 +23,6 @@ const Mistake3 = () => {
         })        
 
     };
-    </pre>
     `
     const handleType = (e) => {
 
@@ -50,7 +45,7 @@ const Mistake3 = () => {
 
     return(
 
-        <div className="flex flex-col">
+        <div className="flex flex-col items-center">
             <h1>State updates aren't immediate</h1>
 
             <div className="flex gap-2 justify-center py-4">
@@ -77,12 +72,12 @@ const Mistake3 = () => {
 
             </div>
 
-            <div className="flex flex-col items-center">
+            <div>
 
                 <input 
                     type="text"
                     placeholder="Type in your name"
-                    className="bg-amber-100 rounded p-2"
+                    className="bg-amber-100 rounded p-2 mb-2"
                     onChange={handleType}    
                 />
 
@@ -93,11 +88,9 @@ const Mistake3 = () => {
 
             </div>
 
-            <div>{mode === "Good"? (
-                <div dangerouslySetInnerHTML={{__html : goodCode}}/>
-            ) : (
-                <div dangerouslySetInnerHTML={{__html : badCode}}/>
-            )}</div>
+            <pre>
+                {mode === "Good" ? goodCode : badCode}
+            </pre>
 
         </div>
 

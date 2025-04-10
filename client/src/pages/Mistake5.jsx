@@ -9,30 +9,25 @@ const Mistake5 = () => {
     const totalPrice = PRICE_PER_ITEM * itemCount;
 
     const badCode = `
-    <pre>
-        const [itemCount, setItemCount] = useState(0);
-        const [totalPrice, setTotalPrice] = useState(0);
+    const [itemCount, setItemCount] = useState(0);
+    const [totalPrice, setTotalPrice] = useState(0);
 
-        const handleClick = (e) => {
-            setItemCount(itemCount + 1);
-        };
+    const handleClick = (e) => {
+        setItemCount(itemCount + 1);
+    };
 
-        useEffect(() => {
-            setTotalPrice(itemCount * PRICE_PER_ITEM);
-        },[itemCount]);
-
-    </pre>
+    useEffect(() => {
+        setTotalPrice(itemCount * PRICE_PER_ITEM);
+    },[itemCount]);
     `
 
     const goodCode = `
-    <pre>
-        const [itemCount, setItemCount] = useState(0);
-        const totalPrice = PRICE_PER_ITEM * itemCount;
+    const [itemCount, setItemCount] = useState(0);
+    const totalPrice = PRICE_PER_ITEM * itemCount;
 
-        const handleClick = (e) => {
-            setItemCount(itemCount + 1);
-        };
-    </pre>
+    const handleClick = (e) => {
+        setItemCount(itemCount + 1);
+    };
     `
     const handleClick = (e) => {
         setItemCount(itemCount + 1);
@@ -40,11 +35,11 @@ const Mistake5 = () => {
 
     return(
 
-        <div className="flex flex-col">
+        <div className="flex flex-col items-center">
 
             <h1>Information can be derived from states/props</h1>
 
-            <div className="flex gap-2 justify-center py-4">
+            <div className="flex gap-2 py-4">
 
                 <button
                     onClick={() => {
@@ -68,22 +63,18 @@ const Mistake5 = () => {
 
             </div>
 
-            <div className="flex justify-center">
-                <button
-                    className="darthButton bg-gray-100"
-                    onClick={handleClick}
-                >Add Item</button>
-            </div>
+            <button
+                className="darthButton bg-gray-100"
+                onClick={handleClick}
+            >Add Item</button>
 
             <p className="flex justify-center mt-2">PRICE_PER_ITEM : 5</p>
             <p className="flex justify-center">Item Count : {itemCount}</p>
             <p className="flex justify-center">Total Price : {totalPrice}</p>
 
-            <div>{mode === "Good"? (
-                <div dangerouslySetInnerHTML={{__html : goodCode}}/>
-            ) : (
-                <div dangerouslySetInnerHTML={{__html : badCode}}/>
-            )}</div>
+            <pre>
+                {mode === "Good" ? goodCode : badCode}
+            </pre>
 
         </div>
 

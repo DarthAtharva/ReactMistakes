@@ -11,8 +11,6 @@ const Mistake4 = () => {
     const [mode, setMode] = useState("Bad");
 
     const badCode = `
-    <pre>
-
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [age, setAge] = useState(0);
@@ -43,13 +41,9 @@ const Mistake4 = () => {
         });
 
     };
-
-    </pre>
     `
 
     const goodCode = `
-    <pre>
-
     const [user, setUser] = useState({
         firstName: "",
         lastName: "",
@@ -64,7 +58,6 @@ const Mistake4 = () => {
         });
 
     };
-    </pre>
     `
     const handleForm = (e) => {
 
@@ -77,7 +70,7 @@ const Mistake4 = () => {
 
     return(
 
-        <div className="flex flex-col">
+        <div className="flex flex-col items-center">
             <h1>Multiple smaller ones instead of a single Object State</h1>
 
             <div className="flex gap-2 justify-center py-4">
@@ -134,11 +127,9 @@ const Mistake4 = () => {
 
             </form>
 
-            <div>{mode === "Good"? (
-                <div dangerouslySetInnerHTML={{__html : goodCode}}/>
-            ) : (
-                <div dangerouslySetInnerHTML={{__html : badCode}}/>
-            )}</div>
+            <pre>
+                {mode === "Good" ? goodCode : badCode}
+            </pre>
 
         </div>
 

@@ -7,33 +7,33 @@ const Mistake8 = () => {
     const [mode, setMode] = useState("Good");
 
     const goodCode = `
-        const [count, setCount] = useState(0);
+    const [count, setCount] = useState(0);
 
-        useEffect(() => {
+    useEffect(() => {
 
-            const goodInterval = setInterval(() => {
+        const goodInterval = setInterval(() => {
 
-                setCount(count + 1);
+            setCount(count + 1);
 
-            }, 1000);
+        }, 1000);
 
-            return () => clearInterval(goodInterval);
+        return () => clearInterval(goodInterval);
 
-        }, [mode, count]);
+    }, [mode, count]);
     `
 
     const badCode = `
-        const [count, setCount] = useState(0);
+    const [count, setCount] = useState(0);
 
-        useEffect(() => {
+    useEffect(() => {
 
-            setInterval(() => {
+        setInterval(() => {
 
-                setCount(count + 1);
+            setCount(count + 1);
 
-            }, 1000);
+        }, 1000);
 
-        }, [mode, count]); 
+    }, [mode, count]); 
     `
 
     useEffect(() => {
@@ -64,11 +64,11 @@ const Mistake8 = () => {
      
     return(
 
-        <div className="flex flex-col">
+        <div className="flex flex-col items-center">
 
             <h1>Stale Closure</h1>
 
-            <div className="flex gap-2 justify-center py-4">
+            <div className="flex gap-2 py-4">
 
                 <button
                     onClick={() => {
@@ -92,7 +92,7 @@ const Mistake8 = () => {
 
             </div>
 
-            <div className="flex justify-center mb-4">
+            <div className="mb-4">
 
                 Count is : {mode === "Good" ? count : badCount}
 

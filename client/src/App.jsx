@@ -10,6 +10,7 @@ import Mistake5 from "./pages/Mistake5";
 import Mistake6 from "./pages/Mistake6";
 import Mistake7 from "./pages/Mistake7";
 import Mistake8 from "./pages/Mistake8";
+import Mistake9 from "./pages/Mistake9";
 
 const App = () => {
 
@@ -40,6 +41,9 @@ const App = () => {
 
     if(id === "8")
       return <Mistake8/>
+
+    if(id === "9")
+      return <Mistake9/>
 
     return <Mistake/>
 

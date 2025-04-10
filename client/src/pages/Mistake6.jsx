@@ -12,46 +12,41 @@ const Mistake6 = () => {
     console.log("Rerendering Mistake6 component");
 
     const badCode = `
-    <pre>
-        const [itemCount, setItemCount] = useState({
+    const [itemCount, setItemCount] = useState({
+        value : "some value",
+        value_ : 0
+    });
+
+    const handleClick = () => {
+        setItemCount({
             value : "some value",
             value_ : 0
         });
+    };
 
-        const handleClick = () => {
-            setItemCount({
-                value : "some value",
-                value_ : 0
-            });
-        };
-
-        useEffect(() => {
-            //Logs below string
-            console.log("Nayan Ra*nd");
-        }, [itemCount.value]);
-    </pre>
+    useEffect(() => {
+        //Logs below string
+        console.log("Nayan Ra*nd");
+    }, [itemCount.value]);
     `
 
     const goodCode = `
-    <pre>
-        const [itemCount, setItemCount] = useState({
+    const [itemCount, setItemCount] = useState({
+        value : "some value",
+        value_ : 0
+    });
+    
+    const handleClick = () => {
+        setItemCount({
             value : "some value",
             value_ : 0
         });
-        
-        const handleClick = () => {
-            setItemCount({
-                value : "some value",
-                value_ : 0
-            });
-        };
+    };
 
-        useEffect(() => {
-            //Doesn't logs below string
-            console.log("Nayan Ra*nd");
-        }, [itemCount.value]);
-
-    </pre>
+    useEffect(() => {
+        //Doesn't logs below string
+        console.log("Nayan Ra*nd");
+    }, [itemCount.value]);
     `
     const handleClick = () => {
         setItemCount({
@@ -67,11 +62,11 @@ const Mistake6 = () => {
 
     return(
 
-        <div className="flex flex-col">
+        <div className="flex flex-col items-center">
 
             <h1>Primitives vs Non-Primitives; Objects are called by referenced unlike const, bool, etc in JS</h1>
 
-            <div className="flex gap-2 justify-center py-4">
+            <div className="flex gap-2 py-4">
 
                 <button
                     onClick={() => {
@@ -93,18 +88,14 @@ const Mistake6 = () => {
 
             </div>
 
-            <div className="flex justify-center">
-                <button
-                    className="darthButton bg-gray-100"
-                    onClick={handleClick}
-                >Click!</button>
-            </div>
- 
-            <div>{mode === "Good"? (
-                <div dangerouslySetInnerHTML={{__html : goodCode}}/>
-            ) : (
-                <div dangerouslySetInnerHTML={{__html : badCode}}/>
-            )}</div>
+            <button
+                className="darthButton bg-gray-100"
+                onClick={handleClick}
+            >Click!</button>
+
+            <pre>
+                {mode === "Good" ? goodCode : badCode}
+            </pre>
 
         </div>
 

@@ -7,38 +7,34 @@ const Mistake7 = () => {
     const [mode, setMode] = useState("Bad");
 
     const badCode = `
-    <pre>
-        const [post, setPost] = useState(null);
+    const [post, setPost] = useState(null);
 
-        useEffect(() => {
+    useEffect(() => {
 
-            fetch('https://dummyjson.com/posts/1')
-            .then((res) => res.json())
-            .then((data) => {
-                setPost(data);
-            });
+        fetch('https://dummyjson.com/posts/1')
+        .then((res) => res.json())
+        .then((data) => {
+            setPost(data);
+        });
 
-        }, []);
-    </pre>
+    }, []);
     `
 
     const goodCode = `
-    <pre>
-        const [post, setPost] = useState(null);
-        const [loading, setLoading] = useState(true);
+    const [post, setPost] = useState(null);
+    const [loading, setLoading] = useState(true);
 
-        useEffect(() => {
+    useEffect(() => {
 
-            fetch('https://dummyjson.com/posts/1')
-            .then((res) => res.json())
-            .then((data) => {
-                setPost(data);
-                setLoading(false);
+        fetch('https://dummyjson.com/posts/1')
+        .then((res) => res.json())
+        .then((data) => {
+            setPost(data);
+            setLoading(false);
 
-            });
+        });
 
-        }, []);
-    </pre>
+    }, []);
     `
 
     useEffect(() => {
@@ -52,11 +48,11 @@ const Mistake7 = () => {
 
     return(
 
-        <div className="flex flex-col">
+        <div className="flex flex-col items-center">
 
             <h1>Initializing state with object</h1>
 
-            <div className="flex gap-2 justify-center py-4">
+            <div className="flex gap-2 py-4">
 
                 <button
                     onClick={() => {
@@ -78,7 +74,7 @@ const Mistake7 = () => {
 
             </div>
 
-            <div className="flex justify-center mb-4">{
+            <div className="mb-4">{
 
                 loading ? ("Loading..."
 
@@ -92,11 +88,9 @@ const Mistake7 = () => {
 
             }</div>
             
-            <div>{mode === "Good"? (
-                <div dangerouslySetInnerHTML={{__html : goodCode}}/>
-            ) : (
-                <div dangerouslySetInnerHTML={{__html : badCode}}/>
-            )}</div>
+            <pre>
+                {mode === "Good" ? goodCode : badCode}
+            </pre>
 
         </div>
 

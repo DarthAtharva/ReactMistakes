@@ -5,7 +5,6 @@ const Mistake2 = ({id}) => {
     const badCode = `
     <h1>Bad Example</h1>
     <p>Hooks are used conditionally below — this will break React rules!</p>
-    <pre>
  
     if (!id) {
     return &lt;p&gt;No ID Provided&lt;/p&gt;
@@ -15,14 +14,11 @@ const Mistake2 = ({id}) => {
     useEffect(() => {}, [something]);
 
     return (...something);
-
-    </pre>
     `;
 
     const goodCode = `
     <h1>Good Example</h1>
     <p>Hooks are always called before any return — this is correct!</p>
-    <pre>
 
     const [something, setSomething] = useState("blablabla");
     useEffect(() => {}, [something]);
@@ -32,8 +28,6 @@ const Mistake2 = ({id}) => {
     }
 
     return (...something);
-
-    </pre>
   `;
 
     id = 1;
@@ -41,13 +35,12 @@ const Mistake2 = ({id}) => {
         return <p>No ID Provided</p>;
     }
 
-    
-
     const [mode, setMode] = useState("bad");
 
     return(
 
-        <>
+        <div className="flex flex-col items-center">
+
             <h1>Conditional Rendering</h1>
 
             <p>
@@ -61,37 +54,27 @@ const Mistake2 = ({id}) => {
                 
             </p>
 
-            <div className="flex flex-col">
+            <div className="flex gap-2 py-4">
+                <button
+                    onClick={() => {setMode("bad")}}
+                    className = "darthButton bg-red-500 text-gray-100" 
+                >
+                    Show Bad Example
+                </button>
 
-                <div className="flex gap-2 justify-center py-4">
-                    <button
-                        onClick={() => {setMode("bad")}}
-                        className = "darthButton bg-red-500 text-gray-100" 
-                    >
-                        Show Bad Example
-                    </button>
-
-                    <button
-                        onClick={() => {setMode("good")}}
-                        className = "darthButton bg-green-500 text-gray-100"
-                    >
-                        Show Good Example
-                    </button>
-                </div>
-
-                <div>
-                    {mode === "good"?(
-                        <div dangerouslySetInnerHTML={{__html : goodCode}}/>
-                    ) : (
-                        <div dangerouslySetInnerHTML={{__html : badCode}}/>
-                    )}
-                </div>
-                
-
-
+                <button
+                    onClick={() => {setMode("good")}}
+                    className = "darthButton bg-green-500 text-gray-100"
+                >
+                    Show Good Example
+                </button>
             </div>
 
-        </>
+            <pre>
+                {mode === "Good" ? goodCode : badCode}
+            </pre>
+                
+        </div>
 
     );
 

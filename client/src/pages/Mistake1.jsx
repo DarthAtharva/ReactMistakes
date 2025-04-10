@@ -6,7 +6,6 @@ const Mistake1 = () => {
     const [mode, setMode] = useState("Bad");
 
     const badCode = `
-    <pre>
     const handleClick = () => {
 
         setCount(count + 1);
@@ -15,11 +14,9 @@ const Mistake1 = () => {
         setCount(count + 1);
 
     };
-    </pre>
     `
 
     const goodCode = `
-    <pre>
     const handleClick = () => {
 
         setCount((prev => (prev + 1)));
@@ -28,7 +25,6 @@ const Mistake1 = () => {
         setCount((prev => (prev + 1)));
 
     };
-    </pre>
     `
     const handleClick = () => {
 
@@ -52,7 +48,7 @@ const Mistake1 = () => {
 
     return(
 
-        <div className="flex flex-col">
+        <div className="flex flex-col items-center">
             <h1>State updates aren't immediate</h1>
 
             <div className="flex gap-2 justify-center py-4">
@@ -79,18 +75,18 @@ const Mistake1 = () => {
 
             </div>
 
-            <div className="flex flex-col items-center">
+            <button 
+                onClick={handleClick}
+                className="darthButton bg-gray-100 mb-2"
+                >
+                {mode} Click
+            </button>
+            
+            <p>Count is: {count}</p>
 
-                <button onClick={handleClick} className="darthButton bg-gray-200">{mode} Click</button>
-                <p>Count is: {count}</p>
-
-            </div>
-
-            <div>{mode === "Good"? (
-                <div dangerouslySetInnerHTML={{__html : goodCode}}/>
-            ) : (
-                <div dangerouslySetInnerHTML={{__html : badCode}}/>
-            )}</div>
+            <pre>
+                {mode === "Good" ? goodCode : badCode}
+            </pre>
 
         </div>
 
