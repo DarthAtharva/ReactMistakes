@@ -46,7 +46,7 @@ const Mistake5 = () => {
                         setMode("Bad");
                         setItemCount(0);
                     }}
-                    className = "darthButton bg-red-500 text-gray-100" 
+                    className = "darthButtonRed" 
                 >
                     Show Bad Example
                 </button>
@@ -56,7 +56,7 @@ const Mistake5 = () => {
                         setMode("Good");
                         setItemCount(0);
                     }}
-                    className = "darthButton bg-green-500 text-gray-100"
+                    className = "darthButtonGreen"
                 >
                     Show Good Example
                 </button>
@@ -64,7 +64,7 @@ const Mistake5 = () => {
             </div>
 
             <button
-                className="darthButton bg-gray-100"
+                className="darthButtonClick"
                 onClick={handleClick}
             >Add Item</button>
 

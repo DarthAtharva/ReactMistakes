@@ -58,7 +58,7 @@ const Mistake7 = () => {
                     onClick={() => {
                         setMode("Bad");
                     }}
-                    className = "darthButton bg-red-500 text-gray-100" 
+                    className = "darthButtonRed" 
                 >
                     Show Bad Example
                 </button>
@@ -67,7 +67,7 @@ const Mistake7 = () => {
                     onClick={() => {
                         setMode("Good");
                     }}
-                    className = "darthButton bg-green-500 text-gray-100"
+                    className = "darthButtonGreen"
                 >
                     Show Good Example
                 </button>
@@ -81,7 +81,7 @@ const Mistake7 = () => {
                 ) : (
 
                     <>
-                        <h1>{post.body}</h1>
+                        <p>{post.body}</p>
                     </>
 
                 )

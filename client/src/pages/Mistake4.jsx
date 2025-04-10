@@ -80,7 +80,7 @@ const Mistake4 = () => {
                         setMode("Bad");
                         setUser({firstName: "", lastName: "", age: 0});
                     }}
-                    className = "darthButton bg-red-500 text-gray-100" 
+                    className = "darthButtonRed" 
                 >
                     Show Bad Example
                 </button>
@@ -90,7 +90,7 @@ const Mistake4 = () => {
                         setMode("Good");
                         setUser({firstName: "", lastName: "", age: 0});
                     }}
-                    className = "darthButton bg-green-500 text-gray-100"
+                    className = "darthButtonGreen"
                 >
                     Show Good Example
                 </button>

@@ -51,13 +51,13 @@ const App = () => {
 
   return(
 
-    <div className="p-2">
+    <div>
     
       <nav>
 
-        <ul className="font-bold text-lg">
+        <ul className="font-bold">
 
-          <li><Link to="/mistake"><h1>MISTAKES</h1></Link></li> 
+          <li><Link to="/mistake"><h1>REACT MISTAKES</h1></Link></li> 
 
         </ul>
 

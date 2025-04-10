@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react";
+import { use, useEffect, useState } from "react";
 
 const PostBody = ({id, mode}) => {
 
     const [text, setText] = useState("");
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
 
@@ -14,7 +15,10 @@ const PostBody = ({id, mode}) => {
                 signal: controller.signal
             })
                 .then((res) => res.json())
-                .then((data) => setText(data.body));
+                .then((data) => {
+                    setText(data.body);
+                    setLoading(false);
+                });
 
             return () => {controller.abort()}
 
@@ -22,13 +26,29 @@ const PostBody = ({id, mode}) => {
 
             fetch(`https://dummyjson.com/posts/${id}`)
             .then((res) => res.json())
-            .then((data) => setText(data.body));
+            .then((data) => {
+                setText(data.body);
+                setLoading(false);
+            });
 
         }
 
     }, [id]);
 
-    return <p>{text}</p>;
+    return (
+        
+        <p className="mb-4">{
+
+            loading ? ("Loading..."
+
+            ) : (
+
+                <p>{text}</p>
+
+            )
+
+        }</p>
+    )
 
 }
 
@@ -78,7 +98,7 @@ const Mistake9 = () => {
                     onClick={() => {
                         setMode("Bad");
                     }}
-                    className = "darthButton bg-red-500 text-gray-100" 
+                    className = "darthButtonRed" 
                 >
                     Show Bad Example
                 </button>
@@ -87,7 +107,7 @@ const Mistake9 = () => {
                     onClick={() => {
                         setMode("Good");
                     }}
-                    className = "darthButton bg-green-500 text-gray-100"
+                    className = "darthButtonGreen"
                 >
                     Show Good Example
                 </button>
@@ -95,7 +115,7 @@ const Mistake9 = () => {
             </div>
 
             <button 
-                className="darthButton bg-gray-100 mb-2"
+                className="darthButtonClick mb-2"
                 onClick={() => setId(Math.floor(Math.random() * 100))}
             >Show another DummyJSON</button>
 

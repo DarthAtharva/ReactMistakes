@@ -75,7 +75,7 @@ const Mistake8 = () => {
                         setMode("Bad");
                         setBadCount(0);
                     }}
-                    className = "darthButton bg-red-500 text-gray-100" 
+                    className = "darthButtonRed" 
                 >
                     Show Bad Example
                 </button>
@@ -85,7 +85,7 @@ const Mistake8 = () => {
                         setMode("Good");
                         setCount(0);
                     }}
-                    className = "darthButton bg-green-500 text-gray-100"
+                    className = "darthButtonGreen"
                 >
                     Show Good Example
                 </button>

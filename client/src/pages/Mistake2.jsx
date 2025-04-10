@@ -57,14 +57,14 @@ const Mistake2 = ({id}) => {
             <div className="flex gap-2 py-4">
                 <button
                     onClick={() => {setMode("bad")}}
-                    className = "darthButton bg-red-500 text-gray-100" 
+                    className = "darthButtonRed" 
                 >
                     Show Bad Example
                 </button>
 
                 <button
                     onClick={() => {setMode("good")}}
-                    className = "darthButton bg-green-500 text-gray-100"
+                    className = "darthButtonGreen"
                 >
                     Show Good Example
                 </button>
