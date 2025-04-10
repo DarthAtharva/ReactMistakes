@@ -91,13 +91,7 @@ const Mistake7 = () => {
                 )
 
             }</div>
-
-            {/* <div className="flex justify-center mb-2">{
-
-                <h1>{post.body}</h1>
-
-            }</div> */}
- 
+            
             <div>{mode === "Good"? (
                 <div dangerouslySetInnerHTML={{__html : goodCode}}/>
             ) : (
