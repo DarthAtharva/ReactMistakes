@@ -88,11 +88,11 @@ const Mistake9 = () => {
     `
     return(
 
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center mt-16">
 
             <h1>Fetching in useEffect</h1>
 
-            <div className="flex gap-2 justify-center py-4">
+            <div className="flex justify-center mt-2">
 
                 <button
                     onClick={() => {

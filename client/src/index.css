@@ -17,9 +17,39 @@
 }
 
 .darthList{
-  @apply text-gray-900 hover:text-white hover:bg-gray-900 focus:ring-4 focus:outline-none font-medium rounded-lg text-lg px-5 py-2.5 text-center me-2 mb-2 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600 
+  @apply text-gray-900 hover:text-white hover:bg-gray-900 focus:ring-4 focus:outline-none font-medium rounded-lg text-lg px-5 py-2.5 text-center  mb-2 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600 
 }
 
 h1{
   @apply text-2xl 
+}
+
+.navbar {
+  @apply fixed top-0 left-0 w-full bg-indigo-300 text-white z-[1000] px-4 py-2 flex justify-between items-center;
+}
+
+.hamburger-button {
+  @apply text-2xl bg-none border-none text-white cursor-pointer;
+}
+
+.hamburger-menu {
+  @apply absolute top-12 left-0 w-full bg-gray-700 list-none m-0 py-4 shadow-md;
+}
+
+.hamburger-menu li {
+  @apply px-4 py-2;
+}
+
+.hamburger-menu li {
+  @apply no-underline text-white block;
+}
+
+.hamburger-menu li:hover {
+  @apply bg-gray-600 block w-full h-full
+}
+
+.darthSnippet{
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
 }

@@ -35,7 +35,7 @@ const Mistake5 = () => {
 
     return(
 
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center mt-16">
 
             <h1>Information can be derived from states/props</h1>
 

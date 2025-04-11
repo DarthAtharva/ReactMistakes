@@ -64,7 +64,7 @@ const Mistake8 = () => {
      
     return(
 
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center mt-16">
 
             <h1>Stale Closure</h1>
 

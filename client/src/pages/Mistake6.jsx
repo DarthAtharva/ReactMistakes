@@ -62,7 +62,7 @@ const Mistake6 = () => {
 
     return(
 
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center mt-16">
 
             <h1>Primitives vs Non-Primitives; Objects are called by referenced unlike const, bool, etc in JS</h1>
 

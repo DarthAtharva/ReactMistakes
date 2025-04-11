@@ -70,10 +70,10 @@ const Mistake4 = () => {
 
     return(
 
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center mt-16">
             <h1>Multiple smaller ones instead of a single Object State</h1>
 
-            <div className="flex gap-2 justify-center py-4">
+            <div className="flex justify-center mt-2">
 
                 <button
                     onClick={() => {

@@ -39,11 +39,11 @@ const Mistake2 = ({id}) => {
 
     return(
 
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center mt-16">
 
             <h1>Conditional Rendering</h1>
 
-            <p>
+            <p className="mt-2">
                 React hooks must always be called unconditionally and in the same order during every render. In your code, the useState and useEffect hooks are called conditionally based on the if (!id) check. This violates the Rules of Hooks.
 
                 <br/><strong>Why This Happens</strong><br/>

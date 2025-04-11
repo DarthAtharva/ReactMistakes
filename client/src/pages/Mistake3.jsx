@@ -45,10 +45,10 @@ const Mistake3 = () => {
 
     return(
 
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center mt-16">
             <h1>State updates aren't immediate</h1>
 
-            <div className="flex gap-2 justify-center py-4">
+            <div className="flex justify-center mt-2">
 
                 <button
                     onClick={() => {
